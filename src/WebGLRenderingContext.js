@@ -442,22 +442,22 @@
     };
 
     function WebGLRenderingContext( canvas ) {
-        var self = this;
-        // mock functions
-        functions.forEach( function( func ) {
-            self.prototype[ func ] = function() {
-                return {};
-            };
-        });
-        // mock enums
-        Object.keys( enums ).forEach( function( key ) {
-            self.prototype[ key ] = enums[ key ];
-        });
-        // add canvas
         this.canvas = canvas;
         this.drawingBufferWidth = canvas.width;
         this.drawingBufferHeight = canvas.height;
     }
+
+    // mock functions
+    functions.forEach( function( func ) {
+        WebGLRenderingContext.prototype[ func ] = function() {
+            return {};
+        };
+    });
+
+    // mock enums
+    Object.keys( enums ).forEach( function( key ) {
+        WebGLRenderingContext.prototype[ key ] = enums[ key ];
+    });
 
     module.exports = WebGLRenderingContext;
 
