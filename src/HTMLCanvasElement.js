@@ -9,7 +9,7 @@
 
     HTMLCanvasElement.prototype.getContext = function() {
         return new WebGLRenderingContext( this );
-    }
+    };
 
     global.HTMLCanvasElement = HTMLCanvasElement;
 

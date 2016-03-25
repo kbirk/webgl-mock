@@ -16,13 +16,13 @@ npm install webgl-mock
 
 ```javascript
 function VertexBuffer( gl, options ) {
-	this.gl = gl;
-	this.type = ( options.type !== undefined ) ? options.type : gl.FLOAT;
+    this.gl = gl;
+    this.type = ( options.type !== undefined ) ? options.type : gl.FLOAT;
     this.mode = ( options.mode !== undefined ) ? options.mode : gl.TRIANGLES;
-	this.buffer = gl.createBuffer();
+    this.buffer = gl.createBuffer();
     gl.bindBuffer( gl.ARRAY_BUFFER, this.buffer );
     gl.bufferData( gl.ARRAY_BUFFER, options.data || null, gl.STATIC_DRAW );
-	gl.bindBuffer( gl.ARRAY_BUFFER, null );
+    gl.bindBuffer( gl.ARRAY_BUFFER, null );
 }
 ```
 
@@ -34,13 +34,13 @@ var gl = canvas.getContext();
 describe('VertexBuffer', function() {
     describe('#constructor()', function() {
         it('should default type to gl.FLOAT', function() {
-			var vb = new VertexBuffer( gl );
-			assert( vb.type === gl.FLOAT );
-		});
-		it('should default mode to gl.TRIANGLES', function() {
-			var vb = new VertexBuffer( gl );
-			assert( vb.type === gl.TRIANGLES );
-		});
-	});
+            var vb = new VertexBuffer( gl );
+            assert( vb.type === gl.FLOAT );
+        });
+        it('should default mode to gl.TRIANGLES', function() {
+            var vb = new VertexBuffer( gl );
+            assert( vb.type === gl.TRIANGLES );
+        });
+    });
 });
 ```
