@@ -13,6 +13,7 @@
         return new WebGLRenderingContext( this );
     };
 
+    // add to global namespace
     global.HTMLCanvasElement = HTMLCanvasElement;
 
     module.exports = HTMLCanvasElement;

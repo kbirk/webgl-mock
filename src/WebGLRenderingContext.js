@@ -459,6 +459,9 @@
         WebGLRenderingContext.prototype[ key ] = enums[ key ];
     });
 
+    // add to global namespace
+    global.WebGLRenderingContext = WebGLRenderingContext;
+
     module.exports = WebGLRenderingContext;
 
 }());

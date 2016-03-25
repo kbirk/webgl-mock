@@ -16,18 +16,19 @@ npm install webgl-mock
 
 ```javascript
 function VertexBuffer( gl, options ) {
+    options = options || {};
     this.gl = gl;
     this.type = ( options.type !== undefined ) ? options.type : gl.FLOAT;
     this.mode = ( options.mode !== undefined ) ? options.mode : gl.TRIANGLES;
     this.buffer = gl.createBuffer();
     gl.bindBuffer( gl.ARRAY_BUFFER, this.buffer );
-    gl.bufferData( gl.ARRAY_BUFFER, options.data || null, gl.STATIC_DRAW );
+    gl.bufferData( gl.ARRAY_BUFFER, options.data || options.size, gl.STATIC_DRAW );
     gl.bindBuffer( gl.ARRAY_BUFFER, null );
 }
 ```
 
 ```javascript
-var HTMLCanvasElement = require('webgl-mock').HTMLCanvasElement;
+require('webgl-mock');
 var canvas = new HTMLCanvasElement( 500, 500 );
 var gl = canvas.getContext();
 
