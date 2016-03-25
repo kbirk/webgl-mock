@@ -1,0 +1,23 @@
+{
+  "name": "webgl-mock",
+  "version": "0.1.0",
+  "description": "A simple implementation-less interface for testing code _outside_ of WebGL",
+  "author": "Kevin Birk <birk.kevin@gmail.com>",
+  "main": "src/exports.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kbirk/webgl-mock.git"
+  },
+  "files": [
+    "src"
+  ],
+  "keywords": [
+    "webgl",
+    "test",
+    "mock",
+    "stub"
+  ],
+  "dependencies": {},
+  "devDependencies": {}
+}
