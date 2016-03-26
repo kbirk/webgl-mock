@@ -1,6 +1,6 @@
 {
   "name": "webgl-mock",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "A simple implementation-less interface for testing code outside of WebGL",
   "author": "Kevin Birk <birk.kevin@gmail.com>",
   "main": "src/exports.js",

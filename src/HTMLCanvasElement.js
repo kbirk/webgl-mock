@@ -5,16 +5,13 @@
     var WebGLRenderingContext = require('./WebGLRenderingContext');
 
     function HTMLCanvasElement( width, height ) {
-        this.width = width;
-        this.height = height;
+        this.width = width !== undefined ? width : 100;
+        this.height = height !== undefined ? height : 100;
     }
 
     HTMLCanvasElement.prototype.getContext = function() {
         return new WebGLRenderingContext( this );
     };
-
-    // add to global namespace
-    global.HTMLCanvasElement = HTMLCanvasElement;
 
     module.exports = HTMLCanvasElement;
 

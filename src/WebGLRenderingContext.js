@@ -441,6 +441,35 @@
         'BROWSER_DEFAULT_WEBGL':37444
     };
 
+    var extensions = {
+        // ratified
+        'OES_texture_float': {},
+        'OES_texture_half_float': {},
+        'WEBGL_lose_context': {},
+        'OES_standard_derivatives': {},
+        'OES_vertex_array_object': {},
+        'WEBGL_debug_renderer_info': null,
+        'WEBGL_debug_shaders': null,
+        'WEBGL_compressed_texture_s3tc': null,
+        'WEBGL_depth_texture': {},
+        'OES_element_index_uint': {},
+        'EXT_texture_filter_anisotropic': null,
+        'EXT_frag_depth': {},
+        'WEBGL_draw_buffers': {},
+        'ANGLE_instanced_arrays': null,
+        'OES_texture_float_linear': null,
+        'OES_texture_half_float_linear': null,
+        'EXT_blend_minmax': null,
+        'EXT_shader_texture_lod': null,
+        // community
+        'WEBGL_compressed_texture_atc': null,
+        'WEBGL_compressed_texture_pvrtc': null,
+        'EXT_color_buffer_half_float': null,
+        'WEBGL_color_buffer_float': null,
+        'EXT_sRGB': null,
+        'WEBGL_compressed_texture_etc1': null
+    };
+
     function WebGLRenderingContext( canvas ) {
         this.canvas = canvas;
         this.drawingBufferWidth = canvas.width;
@@ -459,8 +488,10 @@
         WebGLRenderingContext.prototype[ key ] = enums[ key ];
     });
 
-    // add to global namespace
-    global.WebGLRenderingContext = WebGLRenderingContext;
+    // randomly return {}, or null
+    WebGLRenderingContext.prototype.getExtension = function( ext ) {
+        return extensions[ ext ];
+    };
 
     module.exports = WebGLRenderingContext;
 
