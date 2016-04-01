@@ -4,6 +4,10 @@
 
     // canvas
     global.HTMLCanvasElement = require('./HTMLCanvasElement');
+    global.CanvasRenderingContext2D = require('./CanvasRenderingContext2D');
+    global.ImageData = require('./ImageData');
+    global.Image = require('./Image');
+    global.HTMLImageElement = function() {};
 
     // WebGL 1.0
     global.WebGLRenderingContext = require('./WebGLRenderingContext');

@@ -2,6 +2,7 @@
 
     'use strict';
 
+    var CanvasRenderingContext2D = require('./CanvasRenderingContext2D');
     var WebGLRenderingContext = require('./WebGLRenderingContext');
 
     function HTMLCanvasElement( width, height ) {
@@ -9,8 +10,15 @@
         this.height = height !== undefined ? height : 100;
     }
 
-    HTMLCanvasElement.prototype.getContext = function() {
-        return new WebGLRenderingContext( this );
+    HTMLCanvasElement.prototype.getContext = function( arg ) {
+        switch ( arg ) {
+            case '2d':
+                return new CanvasRenderingContext2D( this );
+            case 'webgl':
+            case 'webgl-experimental':
+                return new WebGLRenderingContext( this );
+        }
+        return null;
     };
 
     module.exports = HTMLCanvasElement;
