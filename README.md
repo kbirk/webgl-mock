@@ -14,6 +14,8 @@ npm install webgl-mock
 
 ## Usage
 
+Write source code using webgl.
+
 ```javascript
 function VertexBuffer( gl, options ) {
     options = options || {};
@@ -27,10 +29,12 @@ function VertexBuffer( gl, options ) {
 }
 ```
 
+Test source code outside of webgl.
+
 ```javascript
 require('webgl-mock');
 var canvas = new HTMLCanvasElement( 500, 500 );
-var gl = canvas.getContext();
+var gl = canvas.getContext( 'webgl' );
 
 describe('VertexBuffer', function() {
     describe('#constructor()', function() {
