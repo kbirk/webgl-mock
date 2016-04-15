@@ -7,7 +7,8 @@
     global.CanvasRenderingContext2D = require('./CanvasRenderingContext2D');
     global.ImageData = require('./ImageData');
     global.Image = require('./Image');
-    global.HTMLImageElement = function() {};
+    global.HTMLImageElement = global.Image;
+    global.HTMLVideoElement = global.Image;
 
     // WebGL 1.0
     global.WebGLRenderingContext = require('./WebGLRenderingContext');
