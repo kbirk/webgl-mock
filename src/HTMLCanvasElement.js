@@ -15,7 +15,7 @@
             case '2d':
                 return new CanvasRenderingContext2D( this );
             case 'webgl':
-            case 'webgl-experimental':
+            case 'experimental-webgl':
                 return new WebGLRenderingContext( this );
         }
         return null;
