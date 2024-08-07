@@ -25,10 +25,10 @@
     global.WebGLUniformLocation = function() {};
 
     // WebGL 2.0
-    //global.WebGL2RenderingContext = function() {};
-    //global.WebGLSync = function() {};
-    //global.WebGLTransformFeedback = function() {};
-    //global.WebGLSampler = function() {};
-    //global.WebGLVertexArrayObject = function() {};
+    global.WebGL2RenderingContext = require("./WebGL2RenderingContext");
+    global.WebGLSync = function() {};
+    global.WebGLTransformFeedback = function() {};
+    global.WebGLSampler = function() {};
+    global.WebGLVertexArrayObject = function() {};
 
 }());
